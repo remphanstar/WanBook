@@ -5,6 +5,17 @@ All notable changes to the WanBook project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-07-02
+
+### Fixed
+- **CRITICAL**: Identified missing Wan2GP implementation folder
+  - OpusWan(1).ipynb notebook expects Wan2GP/ directory with implementation code
+  - Added CRITICAL_ISSUE_WAN2GP_MISSING.md to document the issue
+  - Repository currently incomplete without the actual AI video generation code
+
+### Added
+- **Issue Documentation**: CRITICAL_ISSUE_WAN2GP_MISSING.md detailing the missing implementation
+
 ## [1.0.0] - 2024-12-XX
 
 ### Added
@@ -47,11 +58,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **User Interface**: Jupyter-based interactive interface with progress tracking
 
 ### Known Issues
+- **CRITICAL**: Wan2GP implementation folder missing from repository
 - Large model downloads require stable internet connection
 - First-time setup may take 10-15 minutes
 - Some models may require specific CUDA versions
 
 ### Future Roadmap
+- **Priority 1**: Upload complete Wan2GP implementation folder
 - Additional model integrations
 - Performance optimizations
 - Enhanced user interface features
