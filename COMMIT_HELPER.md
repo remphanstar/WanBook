@@ -9,41 +9,52 @@
 ## Current VS Code Status
 VS Code shows: "Can't push refs to remote. Try running 'Pull' first to integrate your changes."
 
-## Quick Resolution Commands
+# Git Push Resolution Steps
 
-Run these in PowerShell to commit and push the formatting improvements:
+## Current Status
+✅ **Commit successful**: `feat: improve notebook formatting and fix repository management`  
+❌ **Push rejected**: Remote has newer commits (non-fast-forward)
+
+## Solution: Pull and Merge
+
+Run these commands in sequence:
 
 ```powershell
-# Check current status
-git status
+# Pull latest changes from remote
+git pull origin main
 
-# Add all changed files
+# If there are merge conflicts, resolve them, then:
 git add .
+git commit -m "merge: resolve conflicts after notebook formatting updates"
 
-# Commit with descriptive message
-git commit -m "feat: improve notebook formatting and fix repository management
-
-- Reformat WanBook.ipynb with proper Colab @title syntax
-- Fix UnboundLocalError in Cell 4 repository management
-- Update cell titles to accurately reflect content
-- Improve cell organization and structure
-- Add comprehensive changelog entry"
-
-# Push changes
+# Push the merged result
 git push origin main
 ```
 
-## Alternative: Use VS Code Source Control
-1. Open Source Control panel (Ctrl+Shift+G)
-2. Stage all changes (+ icon)
-3. Enter commit message: "feat: improve notebook formatting and fix repository management"
-4. Commit (✓ icon)
-5. Push (sync icon)
+## Alternative: Force Push (Use with caution)
+If you're sure your local changes should override remote:
 
-## Files Modified
-- WanBook.ipynb (reformatted cells, fixed Cell 4)
-- CHANGELOG.md (added new formatting entry)
-- This helper file (COMMIT_HELPER.md)
+```powershell
+git push origin main --force
+```
+
+## What This Will Do
+1. **Pull**: Downloads latest remote commits
+2. **Auto-merge**: Git will try to automatically merge changes
+3. **Manual resolve**: If conflicts occur, edit files and commit
+4. **Push**: Upload your merged changes
+
+## Expected Result
+After successful pull and push:
+- Your notebook formatting improvements will be in the repository
+- Remote commits will be preserved
+- VS Code Source Control will show clean state
+
+## The Credential Warning
+The `git: 'credential-manager-core' is not a git command` warning is harmless - your credentials are working fine (notice "Everything up-to-date" before the rejection).
+
+## Files in This Commit
+- COMMIT_HELPER.md (this helper file)
 
 ## Next Steps
 After successful push:
