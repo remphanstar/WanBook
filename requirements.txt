@@ -1,0 +1,24 @@
+# Core ML/DL Frameworks
+torch>=2.1.0
+torchvision>=0.16.0
+transformers>=4.37.0
+diffusers>=0.24.0
+accelerate>=0.25.0
+xformers==0.0.22
+bitsandbytes
+
+# Gradio UI & Web
+gradio>=4.11.0
+
+# Utilities
+ipywidgets
+safetensors
+einops
+imageio-ffmpeg
+opencv-python-headless
+PyYAML
+psutil
+GPUtil
+tqdm
+huggingface-hub
+omegaconf
